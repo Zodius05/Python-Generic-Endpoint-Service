@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <h1>Welcome to Python Endpoint test service!</h1>
+    <hr>
+    <div class="col-xs-12">
+        <h2>Requests:</h2>
+    </div>
+    <hr>
+    <div class="row">
+        <form class="row" method="POST">
+            <input type="hidden" name="form_id" value="instant_message">
+            <h3 for="" class="form-label">Message</h3>
+            <div class="col">
+                <input type="text" class="form-control" name="text" required></input>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary">Send</button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <table class="table">
+            <tr>
+                <th>Time</th>
+                <th>Message</th>
+                <th></th>
+            </tr>
+            {% for key, value in instant_message.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %} 
